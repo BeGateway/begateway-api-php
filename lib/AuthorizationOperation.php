@@ -166,7 +166,7 @@ class AuthorizationOperation extends ApiAbstract
 
         $request['request'] = array_merge($request['request'], $this->_buildCard());
 
-        Logger::getInstance()->write($request, Logger::DEBUG, get_class() . '::' . __FUNCTION__);
+        Logger::getInstance()->write($request, Logger::DEBUG, get_class($this) . '::' . __FUNCTION__);
 
         return $request;
     }
