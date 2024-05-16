@@ -23,6 +23,8 @@ class Product extends ApiAbstract
     protected $_expired_at = null;
     protected $_test_mode = false;
 
+    public $customer;
+
     public function __construct()
     {
         $this->customer = new Customer();

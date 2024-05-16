@@ -77,7 +77,7 @@ class GetPaymentToken extends ApiAbstract
                     'customer_fields' => [
                         'read_only' => $this->getReadonlyFields(),
                         'visible' => $this->getVisibleFields(),
-                    ],
+                    ]
                 ],
                 'customer' => [
                     'email' => $this->customer->getEmail(),

@@ -10,6 +10,8 @@ use Tests\AbstractTestCase;
 
 class GatewayTransportExceptionTest extends AbstractTestCase
 {
+    private $_apiBase;
+
     protected function setUp(): void
     {
         $this->_apiBase = Settings::$gatewayBase;
