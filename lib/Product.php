@@ -23,6 +23,8 @@ class Product extends ApiAbstract
     protected $_expired_at = null;
     protected $_test_mode = false;
 
+    public $customer;
+
     public function __construct()
     {
         $this->customer = new Customer();
@@ -73,7 +75,7 @@ class Product extends ApiAbstract
             $request['immortal'] = false;
         }
 
-        Logger::getInstance()->write($request, Logger::DEBUG, get_class() . '::' . __FUNCTION__);
+        Logger::getInstance()->write($request, Logger::DEBUG, get_class($this) . '::' . __FUNCTION__);
 
         return $request;
     }

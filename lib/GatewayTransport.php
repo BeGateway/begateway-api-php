@@ -11,11 +11,11 @@ class GatewayTransport
         $process = curl_init($host);
         $json = json_encode($t_request);
 
-        Logger::getInstance()->write("Request to $host", Logger::DEBUG, get_class());
-        Logger::getInstance()->write('with Shop Id ' . Settings::$shopId . ' & Shop key ' . Settings::$shopKey, Logger::DEBUG, get_class());
+        Logger::getInstance()->write("Request to $host", Logger::DEBUG, __CLASS__);
+        Logger::getInstance()->write('with Shop Id ' . Settings::$shopId . ' & Shop key ' . Settings::$shopKey, Logger::DEBUG, __CLASS__);
 
         if (! empty($json)) {
-            Logger::getInstance()->write('with message ' . $json, Logger::DEBUG, get_class());
+            Logger::getInstance()->write('with message ' . $json, Logger::DEBUG, __CLASS__);
         }
 
         if (! empty($t_request)) {
@@ -48,7 +48,7 @@ class GatewayTransport
             throw new Exception('cURL error ' . $error);
         }
 
-        Logger::getInstance()->write("Response $response", Logger::DEBUG, get_class());
+        Logger::getInstance()->write("Response $response", Logger::DEBUG, __CLASS__);
 
         return $response;
     }

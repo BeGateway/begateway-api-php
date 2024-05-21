@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests;
 
 use BeGateway\Settings;
+use BeGateway\Logger;
 use PHPUnit\Framework\TestCase;
 
 class AbstractTestCase extends TestCase
@@ -18,6 +19,10 @@ class AbstractTestCase extends TestCase
 
     public static function authorizeFromEnv(bool $threeds = false): void
     {
+        if (getenv('DEBUG')) {
+            Logger::getInstance()->setLogLevel(Logger::DEBUG);
+        }
+
         if ($threeds) {
             $shop_id = getenv('SHOP_ID_3D');
 

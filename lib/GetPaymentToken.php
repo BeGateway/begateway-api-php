@@ -77,7 +77,7 @@ class GetPaymentToken extends ApiAbstract
                     'customer_fields' => [
                         'read_only' => $this->getReadonlyFields(),
                         'visible' => $this->getVisibleFields(),
-                    ],
+                    ]
                 ],
                 'customer' => [
                     'email' => $this->customer->getEmail(),
@@ -103,7 +103,7 @@ class GetPaymentToken extends ApiAbstract
             $request['checkout']['payment_method'] = $payment_methods;
         }
 
-        Logger::getInstance()->write($request, Logger::DEBUG, get_class() . '::' . __FUNCTION__);
+        Logger::getInstance()->write($request, Logger::DEBUG, get_class($this) . '::' . __FUNCTION__);
 
         return $request;
     }

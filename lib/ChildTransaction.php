@@ -31,7 +31,7 @@ abstract class ChildTransaction extends ApiAbstract
           ],
         ];
 
-        Logger::getInstance()->write($request, Logger::DEBUG, get_class() . '::' . __FUNCTION__);
+        Logger::getInstance()->write($request, Logger::DEBUG, get_class($this) . '::' . __FUNCTION__);
 
         return $request;
     }
